@@ -92,7 +92,8 @@ export default function Projects() {
       : projects.filter((p) => p.category === filter);
   }, [filter]);
 
-  const openSlider = (project) => {
+  const openSlider = (project, e) => {
+    if (e) e.stopPropagation();
     setSelectedProject(project);
     setCurrentImageIndex(0);
     document.body.style.overflow = 'hidden';
@@ -177,12 +178,16 @@ export default function Projects() {
                 <div className="card-hover-actions">
                   <button
                     className="action-circle-btn"
-                    onClick={() => openSlider(project)}
+                    onClick={(e) => openSlider(project, e)}
                   >
                     <Maximize2 size={18} />
                   </button>
                   {project.link && (
-                    <a href={project.link} className="action-circle-btn">
+                    <a
+                      href={project.link}
+                      className="action-circle-btn"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <ExternalLink size={18} />
                     </a>
                   )}
@@ -212,7 +217,7 @@ export default function Projects() {
                   </div>
                   <button
                     className="card-explore-btn"
-                    onClick={() => openSlider(project)}
+                    onClick={(e) => openSlider(project, e)}
                   >
                     Details <ArrowRight size={14} />
                   </button>
