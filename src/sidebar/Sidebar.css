@@ -1,0 +1,100 @@
+.sidebar {
+  width: 80px;
+  background-color: #1e1e1e; /* Solid dashboard background */
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  gap: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  z-index: 20; /* High z-index */
+  position: sticky;
+  top: 50px;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-box {
+  padding: 10px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Hover State */
+.nav-item:hover {
+  color: #ffb400;
+}
+
+.nav-item:hover .icon-box {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Active State */
+.nav-item.active {
+  color: #ffb400; /* الأصفر تاعك */
+}
+
+.nav-item.active .icon-box {
+  background-color: rgba(255, 180, 0, 0.1);
+}
+
+.label {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* ===== MOBILE / TABLET NAVBAR ===== */
+@media (max-width: 1023.98px) {
+  .sidebar {
+    position: fixed; /* Always fixed below the header */
+    top: 0px; /* Exact height of mobile-header */
+    left: 0;
+    width: 100%;
+    height: 72px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    gap: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+    z-index: 1000;
+    background-color: #222222;
+  }
+
+  .sidebar-hidden {
+    transform: translateY(-100%);
+    top: 0; /* Move to top when hidden to follow header */
+  }
+
+  .nav-item {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+    gap: 6px;
+  }
+
+  .icon-box {
+    padding: 8px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+}
