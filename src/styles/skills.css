@@ -1,0 +1,152 @@
+﻿/* ===== SKILLS SECTION ===== */
+.skills-main-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.orange-dot-bg {
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 180, 0, 0.4) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.skills-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.skills-group-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.circle-icon-orange {
+  width: 46px;
+  height: 46px;
+  border: 1px solid #ffb400;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffb400;
+  font-size: 18px;
+}
+
+.skills-side-title {
+  color: #cbd5e1;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.knowledge-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.knowledge-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.knowledge-check-icon {
+  color: #ffb400;
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.tech-groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tech-group-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-group-section .skills-group-header {
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+}
+
+.tech-group-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Slightly reduced gap for mobile */
+  padding-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tech-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: calc(33.33% - 12px); /* Ensure items don't overflow on small screens */
+  min-width: 60px;
+}
+
+.tech-card-icon-orange {
+  font-size: 38px;
+  color: #ffb400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.tech-card-item:hover .tech-card-icon-orange {
+  transform: scale(1.1);
+}
+
+.tech-card-label {
+  color: #94a3b8;
+  font-size: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .skills-split {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+  }
+}

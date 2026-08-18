@@ -13,7 +13,6 @@ import {
   SiFigma,
 } from 'react-icons/si';
 import { DiCss3 } from 'react-icons/di';
-import './Sections.css';
 
 const techGroups = [
   {
@@ -21,7 +20,7 @@ const techGroups = [
     icon: <FiCode />,
     items: [
       { label: 'HTML5', icon: <SiHtml5 /> },
-      { label: 'CSS3', icon: <DiCss3 size={38} color="#FFB400"/> },
+      { label: 'CSS3', icon: <DiCss3 size={38} color="#FFB400" /> },
       { label: 'JavaScript', icon: <SiJavascript /> },
       { label: 'React', icon: <SiReact /> },
       { label: 'Flutter', icon: <SiFlutter /> },

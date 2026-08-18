@@ -1,0 +1,147 @@
+﻿/* ===== ABOUT SECTION MODERN ===== */
+.about-intro-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.about-greeting {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: #ffb400;
+}
+
+.about-description {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.about-info-dashboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-info-pill {
+  background: rgba(255, 180, 0, 0.05);
+  border: 1px solid rgba(255, 180, 0, 0.1);
+  border-radius: 12px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.info-label {
+  color: #94a3b8;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-value {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.services-modern-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modern-service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.modern-service-card:hover {
+  background: rgba(255, 180, 0, 0.05);
+  border-color: rgba(255, 180, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.service-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 180, 0, 0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.service-icon-main {
+  color: #ffb400;
+  width: 24px;
+  height: 24px;
+}
+
+.service-info h4 {
+  color: white;
+  font-size: 16px;
+  margin: 0 0 5px 0;
+}
+
+.service-info p {
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .about-info-dashboard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .services-modern-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-intro-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-content {
+    flex: 1.5;
+  }
+
+  .about-info-dashboard {
+    flex: 1;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

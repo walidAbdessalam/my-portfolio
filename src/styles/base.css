@@ -1,0 +1,136 @@
+﻿/* ===== GLOBAL / BASE ===== */
+.section-card {
+  background: #1e1e1e; /* Solid dashboard background */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 16px; /* Adjusted for mobile */
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  height: auto;
+  position: relative;
+  z-index: 20; /* High z-index */
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-card--scroll {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: auto;
+}
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+  .section-card {
+    padding: 24px;
+  }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+  .section-card {
+    min-height: 80vh; /* Changed from height: 80vh to allow growth */
+    padding: 30px;
+  }
+
+  .section-card--scroll {
+    overflow: visible; /* Changed from hidden to allow natural page scrolling */
+    height: auto;
+  }
+}
+
+/* ===== LAYOUT (Mobile First) ===== */
+.project-card-section,
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: auto;
+}
+
+.project-section-header,
+.contact-section-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #1e1e1e; /* Match solid background */
+  padding-bottom: 12px;
+  margin-bottom: 10px;
+}
+
+.project-section-scroll,
+.contact-section-scroll,
+.resume-scroll {
+  min-height: 0;
+  padding-right: 4px;
+}
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+  .project-section-scroll,
+  .contact-section-scroll,
+  .resume-scroll {
+    padding-right: 6px;
+  }
+}
+
+/* Desktop (1024px) */
+@media (min-width: 1024px) {
+  .project-card-section,
+  .contact-section {
+    max-height: none;
+  }
+
+  .project-section-scroll,
+  .contact-section-scroll,
+  .resume-scroll {
+    flex: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+}
+
+/* ===== SCROLLBAR (Global scroll handles this now) ===== */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+  max-height: 82vh;
+}
+
+.contact-section-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #222222;
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+}
+
+.contact-section-scroll {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding-right: 8px;
+}
+
+.resume-scroll {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  padding-right: 4px;
+}

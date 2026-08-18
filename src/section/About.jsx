@@ -7,7 +7,6 @@ import {
   Database,
   Smartphone,
 } from 'lucide-react';
-import './Sections.css';
 
 export default function About() {
   return (

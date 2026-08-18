@@ -1,6 +1,5 @@
 import React from 'react';
 import { BookOpen, Briefcase } from 'lucide-react';
-import './Sections.css';
 
 export default function Resume() {
   return (

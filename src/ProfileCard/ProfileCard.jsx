@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './ProfileCard.css';
 import {
   FaGithub,
@@ -11,6 +12,8 @@ import {
 } from 'react-icons/fa';
 
 export default function ProfileCard({ onContactClick }) {
+  const { t } = useTranslation();
+
   return (
     <div className="profile-card">
       <div className="profile-banner">
@@ -29,13 +32,12 @@ export default function ProfileCard({ onContactClick }) {
       </div>
 
       <div className="profile-info-content">
-        <h1 className="profile-name">Walid Abdessalam</h1>
         <div className="profile-badge">
-          <span className="badge-text">Full Stack Web Developer</span>
+          <span className="badge-text">{t('profile.role', 'Full Stack Web Developer')}</span>
         </div>
 
         <div className="social-links-container">
-          {/* <a
+          <a
             href="https://github.com/walidAbdessalam"
             target="_blank"
             rel="noopener noreferrer"
@@ -52,7 +54,7 @@ export default function ProfileCard({ onContactClick }) {
             title="LinkedIn"
           >
             <FaLinkedin />
-          </a> */}
+          </a>
           <a
             href="https://www.instagram.com/walid_abdessalam/"
             target="_blank"
@@ -90,11 +92,11 @@ export default function ProfileCard({ onContactClick }) {
           className="action-btn download-btn"
           style={{ textDecoration: 'none' }}
         >
-          <span>Download CV</span>
+          <span>{t('common.downloadCv', 'Download CV')}</span>
           <FaDownload className="btn-icon" />
         </a>
         <button className="action-btn contact-btn" onClick={onContactClick}>
-          <span>Contact Me</span>
+          <span>{t('common.contactMe', 'Contact Me')}</span>
           <FaPaperPlane className="btn-icon" />
         </button>
       </div>

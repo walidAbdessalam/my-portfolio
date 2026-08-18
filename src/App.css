@@ -1,8 +1,15 @@
 .app-container {
   display: flex;
   min-height: 100vh;
-  background-color: transparent; /* Make transparent */
-  padding: 50px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 180, 0, 0.08), transparent 24%),
+    radial-gradient(
+      circle at 92% 88%,
+      rgba(255, 255, 255, 0.035),
+      transparent 26%
+    ),
+    transparent;
+  padding: clamp(24px, 4vw, 56px);
   box-sizing: border-box;
   position: relative;
 }
@@ -19,6 +26,7 @@
   align-items: flex-start; /* Desktop Sidebar Sticky requirement */
   position: relative;
   z-index: 10;
+  gap: clamp(24px, 3vw, 42px);
 }
 
 .header-hidden {
@@ -30,7 +38,8 @@
   height: 85vh; /* Match ProfileCard height */
   overflow-y: auto;
   scroll-behavior: smooth;
-  padding-right: 10px;
+  padding-right: 12px;
+  scrollbar-gutter: stable;
 }
 
 .scroll-section {
@@ -86,11 +95,11 @@
 
   .main-content {
     flex-direction: column;
-    padding: 20px;
+    padding: 92px 16px 24px;
     padding-top: 162px; /* 70px (header) + 72px (navbar) + 20px (gap) */
     align-items: center;
     width: 100%;
-    gap: 20px;
+    gap: 24px;
     height: auto;
   }
 

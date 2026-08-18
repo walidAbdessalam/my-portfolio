@@ -9,7 +9,6 @@ import {
   AlertCircle,
   Briefcase,
 } from 'lucide-react';
-import './Sections.css';
 
 export default function Contact() {
   const [formData, setFormData] = useState({

@@ -1,17 +1,19 @@
 .sidebar {
   width: 80px;
-  background-color: #1e1e1e; /* Solid dashboard background */
+  background: rgba(30, 30, 30, 0.86);
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8px 0;
-  gap: 30px;
+  padding: 14px 0;
+  gap: 22px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   z-index: 20; /* High z-index */
   position: sticky;
   top: 50px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
 }
 
 .nav-item {
@@ -24,6 +26,8 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  width: 100%;
+  padding: 0 8px;
 }
 
 .icon-box {
@@ -48,6 +52,7 @@
 
 .nav-item.active .icon-box {
   background-color: rgba(255, 180, 0, 0.1);
+  box-shadow: 0 0 20px rgba(255, 180, 0, 0.12);
 }
 
 .label {
@@ -74,7 +79,8 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 0;
     z-index: 1000;
-    background-color: #222222;
+    background: rgba(28, 28, 28, 0.94);
+    backdrop-filter: blur(18px);
   }
 
   .sidebar-hidden {

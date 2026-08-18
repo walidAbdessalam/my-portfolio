@@ -7,11 +7,42 @@ import Projects from './section/Projects';
 import Contact from './section/Contact';
 import ParticlesBackground from './ParticlesBackground';
 import { useState, useEffect } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import ProjectDetailsPage from './section/ProjectDetailsPage';
+import Preloader from './Preloader';
 import './App.css';
 
-function App() {
+function PortfolioDashboard() {
   const [activeTab, setActiveTab] = useState('about');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.state?.activeTab !== 'projects') return;
+
+    const frameRefs = { current: [] };
+
+    const firstFrame = window.requestAnimationFrame(() => {
+      setActiveTab('projects');
+
+      const secondFrame = window.requestAnimationFrame(() => {
+        document.getElementById('projects')?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        navigate(location.pathname, { replace: true, state: null });
+      });
+
+      frameRefs.current.push(secondFrame);
+    });
+
+    frameRefs.current.push(firstFrame);
+
+    return () => {
+      frameRefs.current.forEach((frame) => window.cancelAnimationFrame(frame));
+    };
+  }, [location.pathname, location.state, navigate]);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
@@ -121,6 +152,21 @@ function App() {
         </div>
       </main>
     </div>
+  );
+}
+
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  if (isLoading) {
+    return <Preloader onComplete={() => setIsLoading(false)} />;
+  }
+
+  return (
+    <Routes>
+      <Route path="/projects/:id" element={<ProjectDetailsPage />} />
+      <Route path="*" element={<PortfolioDashboard />} />
+    </Routes>
   );
 }
 
